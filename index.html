@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Student Result</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    #output { background: #f0f0f0; padding: 15px; border-radius: 8px; width: 300px; }
+  </style>
+</head>
+<body>
+
+  <h2>Student Result</h2>
+  <div id="output"></div>
+
+  <script>
+    let name = prompt("Enter Name:");
+    let age = prompt("Enter Age:");
+    let marks = prompt("Enter Marks (out of 100):");
+
+    marks = Number(marks);
+
+    function checkResult(score) {
+      if (score >= 40) {
+        return "PASS";
+      } else {
+        return "FAIL";
+      }
+    }
+
+    const student = {
+      name: name,
+      age: age,
+      marks: marks,
+      result: checkResult(marks)
+    };
+
+    document.getElementById("output").innerHTML =`
+      <p><b>Name:</b> ${student.name}</p>
+      <p><b>Age:</b> ${student.age}</p>
+      <p><b>Marks:</b> ${student.marks}</p>
+      <p><b>Result:</b> ${student.result}</p>
+    `;
+  </script>
+
+</body>
+</html>
