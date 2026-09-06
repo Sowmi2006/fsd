@@ -1,47 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Simple Student Result</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 30px; }
-    #output { background: #f0f0f0; padding: 15px; border-radius: 8px; width: 300px; }
-  </style>
+    <title>Book Bill</title>
 </head>
+
 <body>
 
- 
-  <div id="output"></div>
-
-  <script>
-    let name = prompt("Enter Name:");
-    let age = prompt("Enter Age:");
-    let marks = prompt("Enter Marks (out of 100):");
-
-    marks = Number(marks);
-
-    function checkResult(score) {
-      if (score >= 40) {
-        return "PASS";
-      } else {
-        return "FAIL";
-      }
+<h2>book bill</h2>
+<input id="name" placeholder="name">
+<input id="price" placeholder="price">
+<input id="quantity" placeholder="quantity">
+<button onclick="Bill()">calculate</button>
+<p id="result"></p>
+<script>
+    function Bill(){
+        let name=document.getElementById("name").value;
+        let price=Number(document.getElementById("price").value);
+        let quantity=Number(document.getElementById("quantity").value);
+        let total=price*quantity;
+        document.getElementById("result").innerHTML=
+        "name:"+name+"<br>total"+total;
     }
-
-    const student = {
-      name: name,
-      age: age,
-      marks: marks,
-      result: checkResult(marks)
-    };
-
-    document.getElementById("output").innerHTML =`
-      <p><b>Name:</b> ${student.name}</p>
-      <p><b>Age:</b> ${student.age}</p>
-      <p><b>Marks:</b> ${student.marks}</p>
-      <p><b>Result:</b> ${student.result}</p>
-    `;
-  </script>
-
+</script>
 </body>
 </html>

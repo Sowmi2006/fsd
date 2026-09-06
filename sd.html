@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATM</title>
+</head>
+
+<body>
+
+<h2>ATM Balance</h2>
+
+<input id="name" placeholder="name">
+<input id="balance" placeholder="balance">
+<input id="withdraw" placeholder="withdraw">
+<button onclick="withdraw()">withdraw</button>
+<p id="result"></p>
+<script>
+    function withdraw(){
+        let name=document.getElementById("name").value;
+        let balance=Number(document.getElementById("balance").value);
+        let withdraw=Number(document.getElementById("withdraw").value);
+        let remaining=balance-withdraw;
+        document.getElementById("result").innerHTML=
+        "name:"+name+"<br>balance:"+balance+"<br>withdraw:"+withdraw+"<br>remaining:"+remaining;
+    }
+</script>
+</body>
+</html>
